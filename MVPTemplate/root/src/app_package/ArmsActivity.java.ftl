@@ -5,6 +5,10 @@ import android.os.Bundle;
 import ${componentPackageName}.Dagger${pageName}Component;
 import ${moudlePackageName}.${pageName}Module;
 import ${contractPackageName}.${pageName}View;
+<#if needAdapter>
+import ${adapterPackageName}.${pageName}Adapter;
+import javax.inject.Inject;
+</#if>
 import ${presenterImplPackageName}.${pageName}PresenterImpl;
 import ${ativityPackageName}.base.BaseActivity;
 
@@ -18,6 +22,11 @@ import butterknife.BindView;
 
 <@gb.fileHeader />
 public class ${pageName}Activity extends BaseActivity<${pageName}PresenterImpl> implements ${pageName}View{
+
+    <#if needAdapter>
+    @Inject
+    ${pageName}Adapter ${pageName}Adapter;
+    </#if>
 
     @Override
     protected void initInjector() {

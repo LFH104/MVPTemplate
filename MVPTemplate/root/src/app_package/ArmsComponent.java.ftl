@@ -14,9 +14,20 @@ import ${fragmentPackageName}.${pageName}Fragment;
 
 
 import dagger.Component;
-
-@PerActivity
+<#if needActivity && needFragment>
+ @PerActivity
+<#elseif needActivity>
+ @PerActivity
+<#elseif needFragment>
+ @PerFragment
+ </#if>
 @Component(dependencies = ApplicationComponent.class, modules = ${pageName}Module.class)
 public interface ${pageName}Component {
+   <#if needActivity && needFragment>
     void inject(${pageName}Activity activity);
+   <#elseif needActivity>
+    void inject(${pageName}Activity activity);
+   <#elseif needFragment>
+    void inject(${pageName}Fragment fragment);
+   </#if>
 }

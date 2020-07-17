@@ -19,6 +19,11 @@
                  to="${escapeXmlAttribute(resOut)}/layout/${fragmentLayoutName}.xml" />
 </#if>
 
+<#if needAdapter && generateAdapterLayout>
+    <instantiate from="root/res/layout/simple.xml.ftl"
+                 to="${escapeXmlAttribute(resOut)}/layout/${adapterLayoutName}.xml" />
+</#if>
+
 
 <#if needActivity>
     <instantiate from="root/src/app_package/ArmsActivity.${ktOrJavaExt}.ftl"
@@ -30,6 +35,12 @@
     <instantiate from="root/src/app_package/ArmsFragment.${ktOrJavaExt}.ftl"
                    to="${projectOut}/src/main/java/${slashedPackageName(fragmentPackageName)}/${pageName}Fragment.${ktOrJavaExt}" />
     <open file="${projectOut}/src/main/java/${slashedPackageName(fragmentPackageName)}/${pageName}Fragment.${ktOrJavaExt}" />
+</#if>
+
+<#if needAdapter>
+    <instantiate from="root/src/app_package/ArmsAdapter.${ktOrJavaExt}.ftl"
+                   to="${projectOut}/src/main/java/${slashedPackageName(adapterPackageName)}/${pageName}Adapter.${ktOrJavaExt}" />
+    <open file="${projectOut}/src/main/java/${slashedPackageName(adapterPackageName)}/${pageName}Adapter.${ktOrJavaExt}" />
 </#if>
 
 <#if needContract>

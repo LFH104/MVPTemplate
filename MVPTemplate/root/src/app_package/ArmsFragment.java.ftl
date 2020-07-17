@@ -10,17 +10,25 @@ import android.view.ViewGroup;
 import ${componentPackageName}.Dagger${pageName}Component;
 import ${moudlePackageName}.${pageName}Module;
 import ${contractPackageName}.${pageName}View;
+<#if needAdapter>
+import ${adapterPackageName}.${pageName}Adapter;
+</#if>
 import ${presenterImplPackageName}.${pageName}PresenterImpl;
 import ${fragmentPackageName}.base.BaseFragment;
 
 import ${packageName}.R;
 
-
+import javax.inject.Inject;
 
 <#import "root://activities/MVPTemplate/globals.xml.ftl" as gb>
 
 <@gb.fileHeader />
 public class ${pageName}Fragment extends BaseFragment<${pageName}PresenterImpl> implements ${pageName}View{
+    
+    <#if needAdapter>
+    @Inject
+    ${pageName}Adapter ${pageName}Adapter;
+    </#if>
 
     public static ${pageName}Fragment newInstance() {
         ${pageName}Fragment fragment = new ${pageName}Fragment();
@@ -38,9 +46,9 @@ public class ${pageName}Fragment extends BaseFragment<${pageName}PresenterImpl> 
     protected void initInjector() {
         Dagger${pageName}Component.builder()
                 .applicationComponent(getAppComponent())
-                .${pageName}Module(new ${pageName}Module(this))
+                .${extractLetters(pageName[0]?lower_case)}${pageName?substring(1,pageName?length)}Module(new ${pageName}Module(this))
                 .build()
-                .inject(this);
+                .inject(this);    
     }
 
     @Override

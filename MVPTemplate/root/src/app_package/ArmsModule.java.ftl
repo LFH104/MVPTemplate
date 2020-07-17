@@ -11,6 +11,9 @@ import ${ativityPackageName}.${pageName}Activity;
 import ${packageName}.injector.PerFragment;
 import ${fragmentPackageName}.${pageName}Fragment;
 </#if>
+<#if needAdapter>
+import ${adapterPackageName}.${pageName}Adapter;
+</#if>
 
 import dagger.Module;
 import dagger.Provides;
@@ -49,4 +52,18 @@ public class ${pageName}Module {
     public ${pageName}PresenterImpl provide${pageName}PresenterImpl(){
         return new ${pageName}PresenterImpl();
     }
+
+    <#if needAdapter>
+    <#if needActivity && needFragment>
+     @PerActivity
+    <#elseif needActivity>
+     @PerActivity
+    <#elseif needFragment>
+     @PerFragment
+    </#if>
+    @Provides
+    public ${pageName}Adapter provide${pageName}Adapter(){
+        return  new ${pageName}Adapter();
+    }
+    </#if>
 }
