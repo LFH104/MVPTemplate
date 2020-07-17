@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 
 
 import ${componentPackageName}.Dagger${pageName}Component;
-import ${contractPackageName}.${pageName}Contract;
-import ${presenterPackageName}.${pageName}Presenter;
+import ${contractPackageName}.${pageName}View;
+import ${presenterImplPackageName}.${pageName}PresenterImpl;
 
 import ${packageName}.R;
 
@@ -23,7 +23,7 @@ import ${packageName}.R;
 <#import "root://activities/MVPArmsTemplate/globals.xml.ftl" as gb>
 
 <@gb.fileHeader />
-public class ${pageName}Fragment extends BaseFragment<${pageName}Presenter> implements ${pageName}Contract.View{
+public class ${pageName}Fragment extends BaseFragment<${pageName}PresenterImpl> implements ${pageName}Contract.View{
 
     public static ${pageName}Fragment newInstance() {
         ${pageName}Fragment fragment = new ${pageName}Fragment();

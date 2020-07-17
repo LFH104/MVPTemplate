@@ -5,7 +5,7 @@ import dagger.Component;
 
 
 import ${moudlePackageName}.${pageName}Module;
-import ${contractPackageName}.${pageName}Contract;
+import ${contractPackageName}.${pageName}View;
 
 <#if needActivity && needFragment>
 

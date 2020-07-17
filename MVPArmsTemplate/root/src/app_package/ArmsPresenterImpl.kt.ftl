@@ -1,4 +1,4 @@
-package ${presenterPackageName}
+package ${presenterImplPackageName}
 
 import android.app.Application
 

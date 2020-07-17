@@ -34,15 +34,21 @@
 
 <#if needContract>
     <instantiate from="root/src/app_package/ArmsContract.${ktOrJavaExt}.ftl"
-                   to="${projectOut}/src/main/java/${slashedPackageName(contractPackageName)}/${pageName}Contract.${ktOrJavaExt}" />
+                   to="${projectOut}/src/main/java/${slashedPackageName(contractPackageName)}/${pageName}View.${ktOrJavaExt}" />
 </#if>
+
+<#if needPresenterImpl>
+    <instantiate from="root/src/app_package/ArmsPresenterImpl.${ktOrJavaExt}.ftl"
+                   to="${projectOut}/src/main/java/${slashedPackageName(presenterImplPackageName)}/${pageName}PresenterImpl.${ktOrJavaExt}" />
+    <open file="${projectOut}/src/main/java/${slashedPackageName(presenterImplPackageName)}/${pageName}PresenterImpl.${ktOrJavaExt}" />
+</#if>
+
 
 <#if needPresenter>
     <instantiate from="root/src/app_package/ArmsPresenter.${ktOrJavaExt}.ftl"
                    to="${projectOut}/src/main/java/${slashedPackageName(presenterPackageName)}/${pageName}Presenter.${ktOrJavaExt}" />
     <open file="${projectOut}/src/main/java/${slashedPackageName(presenterPackageName)}/${pageName}Presenter.${ktOrJavaExt}" />
 </#if>
-
 
 
 <#if needDagger>

@@ -2,8 +2,8 @@ package ${ativityPackageName};
 
 
 import ${componentPackageName}.Dagger${pageName}Component;
-import ${contractPackageName}.${pageName}Contract;
-import ${presenterPackageName}.${pageName}Presenter;
+import ${contractPackageName}.${pageName}View;
+import ${presenterImplPackageName}.${pageName}PresenterImpl;
 
 import ${packageName}.R;
 
@@ -11,7 +11,7 @@ import ${packageName}.R;
 <#import "root://activities/MVPArmsTemplate/globals.xml.ftl" as gb>
 
 <@gb.fileHeader />
-public class ${pageName}Activity extends BaseActivity<${pageName}Presenter> implements ${pageName}Contract.View {
+public class ${pageName}Activity extends BaseActivity<${pageName}PresenterImpl> implements ${pageName}View{
 
     @Override
     public void setupActivityComponent(AppComponent appComponent) {

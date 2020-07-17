@@ -7,13 +7,13 @@ import android.os.Bundle
 
 import ${componentPackageName}.Dagger${pageName}Component
 import ${moudlePackageName}.${pageName}Module
-import ${contractPackageName}.${pageName}Contract
-import ${presenterPackageName}.${pageName}Presenter
+import ${contractPackageName}.${pageName}View
+import ${presenterImplPackageName}.${pageName}PresenterImpl
 
 import ${packageName}.R
 
 
-class ${pageName}Activity : BaseActivity<${pageName}Presenter>() , ${pageName}Contract.View {
+class ${pageName}Activity : BaseActivity<${pageName}PresenterImpl>() , ${pageName}View {
 
     override fun setupActivityComponent(appComponent:AppComponent) {
         Dagger${pageName}Component //如找不到该类,请编译一下项目

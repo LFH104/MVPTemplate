@@ -143,10 +143,29 @@
         name="Presenter Package Name"
         type="string"
         constraints="package"
-        suggest="${packageName}.presenter.impl"
+        suggest="${packageName}.presenter"
         visibility="needPresenter"
         help="Presenter 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
         />  
+
+
+<parameter
+        id="needPresenterImpl"
+        name="Generate PresenterImpl"
+        type="boolean"
+        default="true"
+        help="是否需要生成 PresenterImpl ? 不勾选则不生成" />  
+
+ <parameter
+        id="presenterImplPackageName"
+        name="PresenterImpl Package Name"
+        type="string"
+        constraints="package"
+        suggest="${packageName}.presenter.impl"
+        visibility="needPresenterImpl"
+        help="PresenterImpl 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
+        />  
+
 
 <parameter
         id="needDagger"

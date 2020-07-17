@@ -12,13 +12,13 @@ import android.view.ViewGroup
 
 import ${componentPackageName}.Dagger${pageName}Component
 import ${moudlePackageName}.${pageName}Module
-import ${contractPackageName}.${pageName}Contract
-import ${presenterPackageName}.${pageName}Presenter
+import ${contractPackageName}.${pageName}View
+import ${presenterImplPackageName}.${pageName}PresenterImpl
 
 import ${packageName}.R
 
 
-class ${pageName}Fragment : BaseFragment<${pageName}Presenter>() , ${pageName}Contract.View{
+class ${pageName}Fragment : BaseFragment<${pageName}PresenterImpl>() , ${pageName}Contract.View{
     companion object {
     fun newInstance():${pageName}Fragment {
         val fragment = ${pageName}Fragment()
