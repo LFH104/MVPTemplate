@@ -33,7 +33,7 @@
 </#if>
 
 <#if needContract>
-    <instantiate from="root/src/app_package/ArmsContract.${ktOrJavaExt}.ftl"
+    <instantiate from="root/src/app_package/ArmsView.${ktOrJavaExt}.ftl"
                    to="${projectOut}/src/main/java/${slashedPackageName(contractPackageName)}/${pageName}View.${ktOrJavaExt}" />
 </#if>
 
