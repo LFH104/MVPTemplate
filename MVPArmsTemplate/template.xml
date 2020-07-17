@@ -5,7 +5,7 @@
     name="Arms 全家桶"
     minApi="9"
     minBuildApi="15"
-    description="一键创建 MVPArms 单个页面所需要的全部组件, JessYan 将这个高度可配置的模板献给强大的 MVPArms, 使用详情请见 README">
+    description="一键创建 MVP 单个页面所需要的全部组件">
 
     <category value="Activity" />
     <formfactor value="Mobile" />
@@ -63,7 +63,7 @@
         name="Ativity Package Name"
         type="string"
         constraints="package"
-        suggest="${packageName}.mvp.ui.activity"
+        suggest="${packageName}.ui.activity"
         visibility="needActivity"
         help="Activity 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
         />
@@ -107,7 +107,7 @@
         name="Fragment Package Name"
         type="string"
         constraints="package"
-        suggest="${packageName}.mvp.ui.fragment"
+        suggest="${packageName}.ui.fragment"
         visibility="needFragment"
         help="Fragment 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
         />  
@@ -126,7 +126,7 @@
         name="Contract Package Name"
         type="string"
         constraints="package"
-        suggest="${packageName}.mvp.contract" 
+        suggest="${packageName}.ui.view" 
         visibility="needContract"
         help="Contract 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
         />  
@@ -143,30 +143,10 @@
         name="Presenter Package Name"
         type="string"
         constraints="package"
-        suggest="${packageName}.mvp.presenter"
+        suggest="${packageName}.presenter.impl"
         visibility="needPresenter"
         help="Presenter 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
         />  
-
-<parameter
-        id="needModel"
-        name="Generate Model"
-        type="boolean"
-        default="true"
-        help="是否需要生成 Model ? 不勾选则不生成" /> 
-
-
-<parameter
-        id="modelPackageName"
-        name="Model Package Name"
-        type="string"
-        constraints="package"
-        suggest="${packageName}.mvp.model"
-        visibility="needModel"
-        help="Model 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
-        />  
-
-
 
 <parameter
         id="needDagger"
@@ -180,7 +160,7 @@
         name="Component Package Name"
         type="string"
         constraints="package"
-        suggest="${packageName}.di.component"
+        suggest="${packageName}.injector.components"
         visibility="needDagger"
         help="Component 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
         />  
@@ -191,7 +171,7 @@
         name="Moudle Package Name"
         type="string"
         constraints="package"
-        suggest="${packageName}.di.module"
+        suggest="${packageName}.injector.module"
         visibility="needDagger"
         help="Moudle 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
         />  

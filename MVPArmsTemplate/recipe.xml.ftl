@@ -43,10 +43,7 @@
     <open file="${projectOut}/src/main/java/${slashedPackageName(presenterPackageName)}/${pageName}Presenter.${ktOrJavaExt}" />
 </#if>
 
-<#if needModel>
-    <instantiate from="root/src/app_package/ArmsModel.${ktOrJavaExt}.ftl"
-                   to="${projectOut}/src/main/java/${slashedPackageName(modelPackageName)}/${pageName}Model.${ktOrJavaExt}" />
-</#if>
+
 
 <#if needDagger>
     <instantiate from="root/src/app_package/ArmsComponent.${ktOrJavaExt}.ftl"
