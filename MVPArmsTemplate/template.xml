@@ -2,7 +2,7 @@
 <template
     format="5"
     revision="1"
-    name="Arms 全家桶"
+    name="MVP"
     minApi="9"
     minBuildApi="15"
     description="一键创建 MVP 单个页面所需要的全部组件">
@@ -24,7 +24,7 @@
             type="string"
             constraints="package"
             default="com.mycompany.myapp"
-            help="请填写你的项目包名,请认真核实此包名是否是正确的项目包名,不能包含子包,正确的格式如:me.jessyan.arms"
+            help="请填写你的项目包名,请认真核实此包名是否是正确的项目包名,不能包含子包,正确的格式如:me.lfh.arms"
             />
         
 
@@ -190,7 +190,7 @@
         name="Moudle Package Name"
         type="string"
         constraints="package"
-        suggest="${packageName}.injector.module"
+        suggest="${packageName}.injector.modules"
         visibility="needDagger"
         help="Moudle 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
         />  
